@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SPACE--Chat</string>
+    <string name="write_message">დაწერე შეტყობინება...</string>
+    <string name="mzia_Sending_text">მზია როგორ ხარ?</string>
+    <string name="timestamp">23:23 Sat</string>
+    <string name="zezva_text_input">კარგად ზეზვა, შენ როგორ ხარ?</string>
 </resources>
