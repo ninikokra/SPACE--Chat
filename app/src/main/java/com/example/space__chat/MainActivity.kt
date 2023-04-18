@@ -15,9 +15,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction()
-            .add(binding.topUserFragment.id, TopUserFragment())
-            .add(binding.bottomUserFragment.id, BottomUserFragment())
-            .commit()
+        initFragments()
+
     }
+
+    private fun initFragments() {
+        supportFragmentManager.beginTransaction().apply {
+            add(binding.topUserFragment.id, TopUserFragment())
+            add(binding.bottomUserFragment.id, BottomUserFragment())
+            commit()
+        }
+
+    }
+
 }

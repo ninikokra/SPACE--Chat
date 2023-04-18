@@ -1,4 +1,4 @@
-package com.example.space__chat.Presentation
+package com.example.space__chat.Presentation.BASE
 
 import android.os.Bundle
 import android.view.LayoutInflater
