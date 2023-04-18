@@ -2,10 +2,22 @@ package com.example.space__chat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.space__chat.Presentation.MziaScreen.MziaFragment
+import com.example.space__chat.Presentation.ZezvaScreen.ZezvaFragment
+import com.example.space__chat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        supportFragmentManager.beginTransaction()
+            .add(binding.zezvaFragment.id, ZezvaFragment())
+            .add(binding.mziaFragment.id, MziaFragment())
+            .commit()
     }
 }
