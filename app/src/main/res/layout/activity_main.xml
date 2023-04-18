@@ -46,7 +46,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_5dp"
-        android:background="@color/yellow_light"></View>
+        android:background="@color/yellow_light"/>
 
     <FrameLayout
         android:id="@+id/bottomUserFragment"
