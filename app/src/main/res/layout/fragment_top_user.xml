@@ -2,12 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottomFragment"
+    android:id="@+id/topFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/zezvaInputTextBox"
+        android:id="@+id/topInputBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/zezvInputTextET"
+            android:id="@+id/topInputET"
             style="@style/text_style_medium"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,23 +40,23 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/zezvaSendBTN"
+        android:id="@+id/topSendBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_16dp"
         android:background="@drawable/send_button"
-        app:layout_constraintBottom_toBottomOf="@+id/zezvaInputTextBox"
-        app:layout_constraintEnd_toEndOf="@+id/zezvaInputTextBox"
-        app:layout_constraintTop_toTopOf="@+id/zezvaInputTextBox" />
+        app:layout_constraintBottom_toBottomOf="@+id/topInputBox"
+        app:layout_constraintEnd_toEndOf="@+id/topInputBox"
+        app:layout_constraintTop_toTopOf="@+id/topInputBox" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mziaFragmentRV"
+        android:id="@+id/topFragmentRV"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dimen_0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/zezvaInputTextBox"
+        app:layout_constraintBottom_toTopOf="@+id/topInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/mzia_item" />
+        tools:listitem="@layout/top_user_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

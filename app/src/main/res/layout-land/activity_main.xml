@@ -36,7 +36,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
-        android:id="@+id/zezvaFragment"
+        android:id="@+id/topUserFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
@@ -49,7 +49,7 @@
         android:background="@color/yellow_light"></View>
 
     <FrameLayout
-        android:id="@+id/mziaFragment"
+        android:id="@+id/bottomUserFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">

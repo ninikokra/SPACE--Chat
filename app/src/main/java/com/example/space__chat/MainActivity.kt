@@ -2,8 +2,8 @@ package com.example.space__chat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.space__chat.Presentation.MziaScreen.MziaFragment
-import com.example.space__chat.Presentation.ZezvaScreen.ZezvaFragment
+import com.example.space__chat.Presentation.BottomUserScreen.BottomUserFragment
+import com.example.space__chat.Presentation.TopUserScreen.TopUserFragment
 import com.example.space__chat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(binding.zezvaFragment.id, ZezvaFragment())
-            .add(binding.mziaFragment.id, MziaFragment())
+            .add(binding.topUserFragment.id, TopUserFragment())
+            .add(binding.bottomUserFragment.id, BottomUserFragment())
             .commit()
     }
 }
