@@ -25,7 +25,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/bottomInputTextET"
-            style="@style/mediuamMyriadGeo_Normal"
+            style="@style/mediumMyriadGeo_Normal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/write_message"
