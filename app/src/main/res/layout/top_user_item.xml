@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="bottom"
     android:layout_margin="@dimen/dimen_14dp">
 
@@ -37,9 +37,9 @@
         android:backgroundTint="@color/gray4"
         android:maxWidth="@dimen/dimen_300dp"
         android:padding="@dimen/dimen_16dp"
-        tools:text="მზია როგორ ხარ?"
         app:layout_constraintBottom_toBottomOf="@id/topUserBigBubble"
-        app:layout_constraintStart_toStartOf="@id/topUserBigBubble" />
+        app:layout_constraintStart_toStartOf="@id/topUserBigBubble"
+        tools:text="მზია როგორ ხარ?" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/TopUserTimeStampTV"
@@ -47,11 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_20dp"
         android:layout_marginTop="@dimen/dimen_5dp"
-        tools:text="23:00 სამ."
         android:textColor="@color/gray1"
         android:textSize="@dimen/dimen_8sp"
         app:layout_constraintStart_toStartOf="@id/topUserMessageTV"
         app:layout_constraintTop_toBottomOf="@id/topUserMessageTV"
+        tools:text="23:00 სამ."
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

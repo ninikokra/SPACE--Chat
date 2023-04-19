@@ -31,8 +31,8 @@
             android:hint="@string/write_message"
             android:maxLines="5"
             android:paddingEnd="@dimen/dimen_55dp"
-            android:scrollbarThumbVertical="@drawable/input_text_scroll"
-            android:scrollbarTrackVertical="@drawable/input_scroll_thumb"
+            android:scrollbarThumbVertical="@drawable/ic_input_text_scroll"
+            android:scrollbarTrackVertical="@drawable/ic_input_scroll_thumb"
             android:scrollbars="vertical"
             android:textColorHint="@color/gray1" />
 
@@ -57,5 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:reverseLayout="false"
+        app:stackFromEnd="true"
         tools:listitem="@layout/bottom_user_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
