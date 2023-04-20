@@ -1,8 +1,8 @@
-package com.example.space__chat.Presentation.TopUserScreen
+package com.example.space__chat.presentation.top_user_screen
 
 import androidx.fragment.app.viewModels
-import com.example.space__chat.Presentation.BASE.BaseFragment
-import com.example.space__chat.Presentation.BASE.Inflate
+import com.example.space__chat.presentation.base.BaseFragment
+import com.example.space__chat.presentation.base.Inflate
 import com.example.space__chat.databinding.FragmentTopUserBinding
 
 

@@ -1,9 +1,9 @@
-package com.example.space__chat
+package com.example.space__chat.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.space__chat.Presentation.BottomUserScreen.BottomUserFragment
-import com.example.space__chat.Presentation.TopUserScreen.TopUserFragment
+import com.example.space__chat.presentation.bottom_user_screen.BottomUserFragment
+import com.example.space__chat.presentation.top_user_screen.TopUserFragment
 import com.example.space__chat.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
