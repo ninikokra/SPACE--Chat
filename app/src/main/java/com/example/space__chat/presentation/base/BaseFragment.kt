@@ -9,7 +9,9 @@ import androidx.viewbinding.ViewBinding
 
 typealias Inflate<VB> = (LayoutInflater, ViewGroup, Boolean) -> VB
 
-abstract class BaseFragment<VB : ViewBinding> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM> : Fragment() {
+
+    protected abstract val viewModel: VM
 
     private var _binding: VB? = null
     abstract fun inflate(): Inflate<VB>

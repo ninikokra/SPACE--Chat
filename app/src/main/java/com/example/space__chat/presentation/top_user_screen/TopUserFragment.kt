@@ -6,9 +6,9 @@ import com.example.space__chat.presentation.base.Inflate
 import com.example.space__chat.databinding.FragmentTopUserBinding
 
 
-class TopUserFragment : BaseFragment<FragmentTopUserBinding>() {
+class TopUserFragment : BaseFragment<FragmentTopUserBinding,TopUserViewModel>() {
 
-    private val viewModel: TopUserViewModel by viewModels()
+    override val viewModel by viewModels<TopUserViewModel>()
 
     override fun inflate(): Inflate<FragmentTopUserBinding> {
         return FragmentTopUserBinding::inflate
