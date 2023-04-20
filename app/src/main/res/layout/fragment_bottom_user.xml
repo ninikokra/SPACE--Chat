@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bottomInputTextBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_16dp"
+        android:layout_marginBottom="@dimen/dimen_30dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dimen_28dp"
+        app:boxCornerRadiusBottomStart="@dimen/dimen_28dp"
+        app:boxCornerRadiusTopEnd="@dimen/dimen_28dp"
+        app:boxCornerRadiusTopStart="@dimen/dimen_28dp"
+        app:boxStrokeColor="@color/violet"
+        app:boxStrokeWidth="@dimen/dimen_1dp"
+        app:hintEnabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/bottomInputTextET"
+            style="@style/mediumMyriadGeo_Normal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/write_message"
+            android:maxLines="5"
+            android:paddingEnd="@dimen/dimen_55dp"
+            android:scrollbarThumbVertical="@drawable/ic_input_text_scroll"
+            android:scrollbarTrackVertical="@drawable/ic_input_scroll_thumb"
+            android:scrollbars="vertical"
+            android:textColorHint="@color/gray1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/bottomSendBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:background="@drawable/ic_send_button"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomInputTextBox"
+        app:layout_constraintEnd_toEndOf="@+id/bottomInputTextBox"
+        app:layout_constraintTop_toTopOf="@+id/bottomInputTextBox" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bottomFragmentRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/bottomInputTextBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:reverseLayout="false"
+        app:stackFromEnd="true"
+        tools:listitem="@layout/bottom_user_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>
