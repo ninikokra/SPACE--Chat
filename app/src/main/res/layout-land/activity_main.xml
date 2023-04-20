@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/switch_day_night" />
+            android:background="@drawable/ic_switch_day_night" />
 
         <ImageView
             android:id="@+id/nightDaySwitchBTN"
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/switch_night_day"
+            android:background="@drawable/ic_switch_night_day"
             android:visibility="gone" />
     </androidx.appcompat.widget.Toolbar>
 
