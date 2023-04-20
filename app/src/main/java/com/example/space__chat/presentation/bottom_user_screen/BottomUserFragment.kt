@@ -15,6 +15,6 @@ class BottomUserFragment : BaseFragment<FragmentBottomUserBinding,BottomUserView
         return FragmentBottomUserBinding::inflate
     }
 
-    override fun onBind() {
+    override fun onBind(viewModel: BottomUserViewModel) {
     }
 }

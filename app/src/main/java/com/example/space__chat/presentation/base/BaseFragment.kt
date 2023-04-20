@@ -11,13 +11,13 @@ typealias Inflate<VB> = (LayoutInflater, ViewGroup, Boolean) -> VB
 
 abstract class BaseFragment<VB : ViewBinding, VM> : Fragment() {
 
-    protected abstract val viewModel: VM
+    abstract val viewModel: VM
 
     private var _binding: VB? = null
     abstract fun inflate(): Inflate<VB>
     protected val binding get() = _binding!!
 
-    abstract fun onBind()
+    abstract fun onBind(viewmodel: VM)
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,7 +30,7 @@ abstract class BaseFragment<VB : ViewBinding, VM> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        onBind()
+        onBind(viewModel)
     }
 
     override fun onDestroyView() {
