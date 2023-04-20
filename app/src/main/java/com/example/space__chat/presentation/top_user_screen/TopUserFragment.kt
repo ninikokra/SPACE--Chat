@@ -14,7 +14,7 @@ class TopUserFragment : BaseFragment<FragmentTopUserBinding,TopUserViewModel>() 
         return FragmentTopUserBinding::inflate
     }
 
-    override fun onBind() {
+    override fun onBind(viewModel: TopUserViewModel) {
     }
 
 }
