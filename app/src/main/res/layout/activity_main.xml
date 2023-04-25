@@ -25,6 +25,15 @@
             android:layout_marginEnd="@dimen/dimen_20dp"
             android:background="@drawable/ic_switch_day_night" />
 
+        <ImageView
+            android:id="@+id/nightDaySwitcherBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/dimen_20dp"
+            android:background="@drawable/ic_switch_night_day"
+            android:visibility="gone" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
@@ -38,7 +47,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_5dp"
-        android:background="@color/yellow_light" />
+        android:background="@color/yellow" />
 
     <FrameLayout
         android:id="@+id/bottomUserFragment"
