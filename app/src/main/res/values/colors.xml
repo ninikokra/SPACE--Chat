@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="violet">#9F60FF</color>
-    <color name="violet_light">#DAC2FF</color>
-    <color name="gray1">#C7C7C7</color>
-    <color name="gray2">#DADADA</color>
-    <color name="gray3">#E4E4E4</color>
-    <color name="gray4">#F1F1F1</color>
-    <color name="blue_dark">#160039</color>
-    <color name="blue_light">#2E0072</color>
-    <color name="dark_gray">#191919</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="yellow_light">#F7CE7F</color>
+    <color name="purple_default">#9F60FF</color>
+    <color name="purple_light">#DAC2FF</color>
+    <color name="neutral_01_great_dark_grey">#191919</color>
+    <color name="neutral_02_dark_grey">#C7C7C7</color>
+    <color name="neutral_03_grey">#DADADA</color>
+    <color name="neutral_04_light_grey">#E4E4E4</color>
+    <color name="neutral_05_lightest_grey">#F1F1F1</color>
+    <color name="neutral_06_white">#FFFFFFFF</color>
+    <color name="dark_01_midnight_blue">#160039</color>
+    <color name="dark_02_blue">#2E0072</color>
+    <color name="divider_primary">#F7CE7F</color>
     <color name="black">#000000</color>
-    <color name="red">#FF0000</color>
+    <color name="error_label">#FF0000</color>
+    <color name="yellow">#FFCA55</color>
 </resources>

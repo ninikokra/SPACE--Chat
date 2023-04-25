@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.SPACEChat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_dark</item>
-        <item name="colorPrimaryVariant">@color/blue_light</item>
-        <item name="colorOnPrimary">@color/dark_gray</item>
+        <item name="colorPrimary">@color/dark_01_midnight_blue</item>
+        <item name="colorPrimaryVariant">@color/dark_02_blue</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/violet</item>
-        <item name="colorSecondaryVariant">@color/violet_light</item>
+        <item name="colorSecondary">@color/purple_default</item>
+        <item name="colorSecondaryVariant">@color/purple_light</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
