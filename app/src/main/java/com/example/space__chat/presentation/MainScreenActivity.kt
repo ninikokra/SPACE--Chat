@@ -2,11 +2,9 @@ package com.example.space__chat.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
 import com.example.space__chat.Presentation.ui.ChatUsersFragment
-import com.example.space__chat.Presentation.model.UserTypeEnum
+import com.example.space__chat.Presentation.model.UserType
 import com.example.space__chat.R
 import com.example.space__chat.databinding.ActivityMainBinding
 
@@ -19,32 +17,15 @@ class MainScreenActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initFragments(savedInstanceState)
+        initFragments()
         switchListener()
     }
 
-    private fun initFragments(savedInstanceState: Bundle?) {
+    private fun initFragments() {
         supportFragmentManager.beginTransaction().apply {
-            if (savedInstanceState == null) {
-                add(binding.topUserFragment.id, ChatUsersFragment(), UserTypeEnum.UserSender.name)
-                add(
-                    binding.bottomUserFragment.id,
-                    ChatUsersFragment(),
-                    UserTypeEnum.UserReceiver.name
-                )
-            } else {
-                replace(
-                    binding.topUserFragment.id,
-                    ChatUsersFragment(),
-                    UserTypeEnum.UserSender.name
-                )
-                replace(
-                    binding.bottomUserFragment.id,
-                    ChatUsersFragment(),
-                    UserTypeEnum.UserReceiver.name
-                )
-            }.commit()
-        }
+            replace(binding.topUserFragment.id, ChatUsersFragment(), UserType.Sender.name)
+            replace(binding.bottomUserFragment.id, ChatUsersFragment(), UserType.Receiver.name)
+        }.commit()
     }
 
     private fun switchListener() {
