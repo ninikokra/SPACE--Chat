@@ -1,12 +1,17 @@
 package com.example.space__chat.utils
 
+import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 import com.example.space__chat.data.Entity
 
-class ChatCallBack : DiffUtil.ItemCallback<Entity>() {
-    override fun areItemsTheSame(oldItem: Entity, newItem: Entity) =
-        oldItem.id == newItem.id
+class ChatCallBack<T : Any> : DiffUtil.ItemCallback<T>() {
 
-    override fun areContentsTheSame(oldItem: Entity, newItem: Entity) =
-        oldItem == newItem
+    override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
+        return oldItem === newItem
+    }
+
+    @SuppressLint("DiffUtilEquals")
+    override fun areContentsTheSame(oldItem: T, newItem: T): Boolean {
+        return oldItem == newItem
+    }
 }
