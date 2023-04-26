@@ -1,4 +1,4 @@
-package com.example.space__chat.presentation.top_user_screen
+package com.example.space__chat.Presentation.vm
 
 import androidx.lifecycle.ViewModel
 

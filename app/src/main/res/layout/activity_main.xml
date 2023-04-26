@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_weight="2"
     android:orientation="vertical"
-    tools:context=".presentation.MainActivity">
+    tools:context=".presentation.MainScreenActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,22 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/dayNightSwitchBTN"
+        <Switch
+            android:id="@+id/switchBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/ic_switch_day_night" />
-
-        <ImageView
-            android:id="@+id/nightDaySwitcherBTN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/ic_switch_night_day"
-            android:visibility="gone" />
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:background="@drawable/ic_switch_light_bckg"
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
 
     </androidx.appcompat.widget.Toolbar>
 
