@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/dimen_10dp"
-            android:background="@drawable/ic_switch_light_bckg"
+            android:background="@drawable/bckg_switch_light"
             android:thumb="@android:color/transparent"
             android:track="@android:color/transparent" />
 

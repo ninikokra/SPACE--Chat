@@ -1,4 +1,4 @@
-package com.example.space__chat.utils
+package com.example.space__chat.utils.extensions
 
 import android.content.res.ColorStateList
 import android.view.View
