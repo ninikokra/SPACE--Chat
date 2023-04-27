@@ -44,8 +44,8 @@ class ChatRVAdapter(private val user: UserType) :
             chatDesignBigBubbleIMG.setImgTint(color)
             messageInputTV.setTint(color)
             root.layoutDirection = if (user.name == item.sender) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
-            messageInputTV.layoutDirection = root.layoutDirection
-            timeStampTV.layoutDirection = root.layoutDirection
+            messageInputTV.layoutDirection
+            timeStampTV.layoutDirection
         }
     }
 }
