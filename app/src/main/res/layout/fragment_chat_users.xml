@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/bottomInputTextBox"
+        android:id="@+id/chatInputBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         app:boxCornerRadiusBottomStart="@dimen/dimen_28dp"
         app:boxCornerRadiusTopEnd="@dimen/dimen_28dp"
         app:boxCornerRadiusTopStart="@dimen/dimen_28dp"
-        app:boxStrokeColor="@color/violet"
+        app:boxStrokeColor="@color/purple_default"
         app:boxStrokeWidth="@dimen/dimen_1dp"
         app:hintEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/bottomInputTextET"
+            android:id="@+id/chatInputET"
             style="@style/mediumMyriadGeo_Normal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,30 +34,30 @@
             android:scrollbarThumbVertical="@drawable/ic_input_text_scroll"
             android:scrollbarTrackVertical="@drawable/ic_input_scroll_thumb"
             android:scrollbars="vertical"
-            android:textColorHint="@color/gray1" />
+            android:textColorHint="@color/neutral_02_dark_grey" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
-        android:id="@+id/bottomSendBTN"
+        android:id="@+id/chatSendBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dimen_16dp"
         android:background="@drawable/ic_send_button"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomInputTextBox"
-        app:layout_constraintEnd_toEndOf="@+id/bottomInputTextBox"
-        app:layout_constraintTop_toTopOf="@+id/bottomInputTextBox" />
+        app:layout_constraintBottom_toBottomOf="@+id/chatInputBox"
+        app:layout_constraintEnd_toEndOf="@+id/chatInputBox"
+        app:layout_constraintTop_toTopOf="@+id/chatInputBox" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bottomFragmentRV"
+        android:id="@+id/chatFragmentRV"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/bottomInputTextBox"
+        app:layout_constraintBottom_toTopOf="@+id/chatInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:reverseLayout="false"
         app:stackFromEnd="true"
-        tools:listitem="@layout/bottom_user_item" />
+        tools:listitem="@layout/rv_user_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

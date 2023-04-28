@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_weight="2"
     android:orientation="vertical"
-    tools:context=".presentation.MainActivity">
+    tools:context=".presentation.ChatActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,22 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/dayNightSwitchBTN"
+        <Switch
+            android:id="@+id/switchButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/ic_switch_day_night" />
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            android:background="@drawable/bckg_switch_light"
+            android:thumb="@android:color/transparent"
+            android:track="@android:color/transparent" />
 
-        <ImageView
-            android:id="@+id/nightDaySwitchBTN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="@dimen/dimen_20dp"
-            android:background="@drawable/ic_switch_night_day"
-            android:visibility="gone" />
     </androidx.appcompat.widget.Toolbar>
 
     <FrameLayout
@@ -46,7 +40,7 @@
     <View
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dimen_5dp"
-        android:background="@color/yellow_light" />
+        android:background="@color/yellow" />
 
     <FrameLayout
         android:id="@+id/bottomUserFragment"
