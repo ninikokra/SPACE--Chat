@@ -1,6 +1,6 @@
-package com.example.space__chat.Presentation.model
+package com.example.space__chat.presentation.model
 
 enum class UserType {
-    Sender,
-    Receiver
+    TOP_USER,
+    BOTTOM_USER
 }

@@ -5,18 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import org.koin.androidx.viewmodel.ext.android.viewModelForClass
+import kotlin.reflect.KClass
 
 typealias Inflate<VB> = (LayoutInflater, ViewGroup, Boolean) -> VB
 
-abstract class BaseFragment<VB : ViewBinding, VM> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM :ViewModel> : Fragment() {
 
-    abstract val viewModel: VM
+    abstract val viewModelClass: KClass<VM>
+    private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
 
     private var _binding: VB? = null
-    abstract fun inflate(): Inflate<VB>
     protected val binding get() = _binding!!
-
+    abstract fun inflate(): Inflate<VB>
     abstract fun onBind(viewmodel: VM)
 
     override fun onCreateView(
@@ -24,7 +27,9 @@ abstract class BaseFragment<VB : ViewBinding, VM> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = this.inflate().invoke(inflater, container!!, false)
+        if (_binding == null) {
+            _binding = container?.let { this.inflate().invoke(inflater, it, false) }
+        }
         return binding.root
     }
 

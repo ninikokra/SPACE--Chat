@@ -2,7 +2,6 @@ package com.example.space__chat.utils
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
-import com.example.space__chat.data.Entity
 
 class ChatCallBack<T : Any> : DiffUtil.ItemCallback<T>() {
 

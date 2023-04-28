@@ -8,3 +8,6 @@ fun Long.convertTimeToString(): String {
     val dayMonthFormat = SimpleDateFormat("dd/MM, HH:mm", Locale.getDefault())
     return dayMonthFormat.format(calendar.time)
 }
+fun getTimeInMills(): Long{
+    return System.currentTimeMillis()
+}

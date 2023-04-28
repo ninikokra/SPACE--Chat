@@ -3,11 +3,11 @@ package com.example.space__chat.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.space__chat.Presentation.model.ThemeMode
-import com.example.space__chat.Presentation.ui.ChatUsersFragment
-import com.example.space__chat.Presentation.model.UserType
+import com.example.space__chat.presentation.model.ThemeMode
+import com.example.space__chat.presentation.model.UserType
 import com.example.space__chat.R
 import com.example.space__chat.databinding.ActivityChatBinding
+import com.example.space__chat.presentation.ui.ChatUsersFragment
 
 class ChatActivity : AppCompatActivity() {
 

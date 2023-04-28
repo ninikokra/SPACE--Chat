@@ -2,10 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="bottom"
-    android:layout_margin="@dimen/dimen_14dp">
+    android:layout_margin="@dimen/dimen_14dp"
+    >
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/chatDesignSmallBubbleIMG"
@@ -39,7 +39,7 @@
         android:padding="@dimen/dimen_16dp"
         app:layout_constraintBottom_toBottomOf="@id/chatDesignBigBubbleIMG"
         app:layout_constraintStart_toStartOf="@id/chatDesignBigBubbleIMG"
-        tools:text="მზია როგორ ხარ?" />
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/timeStampTV"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_20dp"
         android:layout_marginTop="@dimen/dimen_5dp"
-        android:textColor="@color/neutral_02_dark_grey"
+        android:textColor="@color/neutral_01_great_dark_grey"
         android:textSize="@dimen/dimen_8sp"
         app:layout_constraintStart_toStartOf="@id/messageInputTV"
         app:layout_constraintTop_toBottomOf="@id/messageInputTV"
