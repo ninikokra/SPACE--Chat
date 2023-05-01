@@ -17,10 +17,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Switch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dimen_54dp"
+            android:layout_height="@dimen/dimen_27dp"
             android:layout_gravity="end"
             android:layout_marginEnd="@dimen/dimen_10dp"
             android:background="@drawable/bckg_switch_light"

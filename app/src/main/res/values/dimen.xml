@@ -8,7 +8,9 @@
     <dimen name="dimen_18sp">18sp</dimen>
     <dimen name="dimen_24sp">24sp</dimen>
 
+    <dimen name="dimen_54dp">54dp</dimen>
     <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_27dp">27dp</dimen>
     <dimen name="dimen_1dp">1dp</dimen>
     <dimen name="dimen_3dp">3dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>

@@ -34,7 +34,8 @@
             android:scrollbarThumbVertical="@drawable/ic_input_text_scroll"
             android:scrollbarTrackVertical="@drawable/ic_input_scroll_thumb"
             android:scrollbars="vertical"
-            android:textColorHint="@color/neutral_02_dark_grey" />
+            android:textColorHint="@color/neutral_02_dark_grey"
+            tools:ignore="RtlSymmetry" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
