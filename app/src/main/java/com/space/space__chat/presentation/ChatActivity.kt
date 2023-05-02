@@ -1,12 +1,12 @@
 package com.space.space__chat.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.space.space__chat.presentation.model.ThemeMode
-import com.space.space__chat.presentation.model.UserType
 import com.space.space__chat.R
 import com.space.space__chat.databinding.ActivityChatBinding
+import com.space.space__chat.presentation.model.ThemeMode
+import com.space.space__chat.presentation.model.UserType
 import com.space.space__chat.presentation.ui.ChatUsersFragment
 
 class ChatActivity : AppCompatActivity() {
@@ -24,8 +24,8 @@ class ChatActivity : AppCompatActivity() {
 
     private fun initFragments() {
         supportFragmentManager.beginTransaction().apply {
-            replace(binding.topUserFragment.id, ChatUsersFragment(), UserType.TOP_USER.name)
-            replace(binding.bottomUserFragment.id, ChatUsersFragment(), UserType.BOTTOM_USER.name)
+            replace(binding.topUserFragment!!.id, ChatUsersFragment(), UserType.TOP_USER.name)
+            replace(binding.bottomUserFragment!!.id, ChatUsersFragment(), UserType.BOTTOM_USER.name)
         }.commit()
     }
 

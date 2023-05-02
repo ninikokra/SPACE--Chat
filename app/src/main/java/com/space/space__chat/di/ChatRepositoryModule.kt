@@ -6,5 +6,4 @@ import org.koin.dsl.module
 
 val repositoryModule = module{
     single<ChatRepository> { ChatRepositoryImpl(get()) }
-
 }

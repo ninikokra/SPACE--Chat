@@ -12,13 +12,18 @@ import kotlin.reflect.KClass
 
 typealias Inflate<VB> = (LayoutInflater, ViewGroup, Boolean) -> VB
 
-abstract class BaseFragment<VB : ViewBinding, VM :ViewModel> : Fragment() {
+abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
     abstract val viewModelClass: KClass<VM>
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
-
     private var _binding: VB? = null
     protected val binding get() = _binding!!
+    protected val listener = object : AdapterListener {
+        override fun getUserId(): String = userId
+    }
+    protected val userId get() = userId()
+    abstract fun userId(): String
+
     abstract fun inflate(): Inflate<VB>
     abstract fun onBind(viewmodel: VM)
 

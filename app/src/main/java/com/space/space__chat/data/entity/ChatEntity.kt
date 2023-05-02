@@ -1,14 +1,13 @@
-package com.space.space__chat.data.model
+package com.space.space__chat.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.space.space__chat.presentation.model.UserType
 
 @Entity(tableName = "messages")
 data class ChatEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int? =null,
-    val sender: UserType?,
+    val sender: String?,
     val message: String?,
     val timeStamp: Long?
 )

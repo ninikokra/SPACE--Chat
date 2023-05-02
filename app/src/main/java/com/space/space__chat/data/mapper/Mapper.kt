@@ -1,7 +1,7 @@
 package com.space.space__chat.data.mapper
 
-import com.space.space__chat.data.model.ChatEntity
-import com.space.space__chat.data.model.MessageModel
+import com.space.space__chat.data.entity.ChatEntity
+import com.space.space__chat.domain.model.MessageModel
 
 fun MessageModel.toEntity() = ChatEntity(
     id = id,
