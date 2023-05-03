@@ -18,8 +18,10 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
     private var _binding: VB? = null
     protected val binding get() = _binding!!
+
     protected val listener = object : AdapterListener {
-        override fun getUserId(): String = userId
+        override val getUserId: () -> String
+            get() = { userId }
     }
     protected val userId get() = userId()
     abstract fun userId(): String

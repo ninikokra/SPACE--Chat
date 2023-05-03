@@ -3,10 +3,10 @@ package com.space.space__chat.data
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.space.space__chat.data.dao.ChatDao
-import com.space.space__chat.data.entity.ChatEntity
+import com.space.space__chat.data.entity.MessageEntity
 
 @Database(
-    entities = [ChatEntity::class],
+    entities = [MessageEntity::class],
     version = 10,
 )
 abstract class ChatDataBase : RoomDatabase() {

@@ -37,6 +37,7 @@
         android:backgroundTint="@color/neutral_05_lightest_grey"
         android:maxWidth="@dimen/dimen_300dp"
         android:padding="@dimen/dimen_16dp"
+        tools:text="@tools:sample/lorem"
         app:layout_constraintBottom_toBottomOf="@id/chatDesignBigBubbleIMG"
         app:layout_constraintStart_toStartOf="@id/chatDesignBigBubbleIMG"
         />
