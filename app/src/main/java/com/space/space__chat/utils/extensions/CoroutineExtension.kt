@@ -13,6 +13,7 @@ fun ViewModel.viewModelScope(
 ) {
     viewModelScope.launch { block() }
 }
+
 fun <FL> Fragment.lifecycleScopeCollect(flow: Flow<FL>, block: suspend CoroutineScope.(FL) -> Unit) {
     viewLifecycleOwner.lifecycleScope.launch {
         flow.collect { item ->

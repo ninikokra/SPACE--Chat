@@ -39,9 +39,9 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
     }
 
     private fun sendMessage(viewModel: ChatUsersViewModel) {
-        with(viewModel) {
-            sendMessage(binding.chatInputET.text.toString(), tag.toString())
-            binding.chatInputET.text?.clear()
+        with(binding.chatInputET){
+            viewModel.sendMessage(text.toString(), tag.toString())
+            text?.clear()
         }
     }
 
@@ -50,4 +50,5 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
             adapter.submitList(messages)
         }
     }
+
 }
