@@ -33,13 +33,13 @@ class ChatAdapter(private val adapterListener: ()->String) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(adapterListener: () -> String, item: MessageModel) = with(binding) {
-            messageInputTV.text = item.message
+            messageInputTextView.text = item.message
             timeStampTV.text = item.timeStamp!!.convertTimeToString()
             val color =
                 if (adapterListener.invoke() == item.sender) R.color.purple_light else R.color.neutral_05_lightest_grey
             chatDesignSmallBubbleIMG.setImgTint(color)
             chatDesignBigBubbleIMG.setImgTint(color)
-            messageInputTV.setTint(color)
+            messageInputTextView.setTint(color)
             root.layoutDirection =
                 if (adapterListener.invoke() == item.sender) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
         }

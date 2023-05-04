@@ -28,7 +28,7 @@
         app:layout_constraintStart_toEndOf="@id/chatDesignSmallBubbleIMG" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/messageInputTV"
+        android:id="@+id/messageInputTextView"
         style="@style/message_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,8 +50,8 @@
         android:layout_marginTop="@dimen/dimen_5dp"
         android:textColor="@color/neutral_02_dark_grey"
         android:textSize="@dimen/dimen_8sp"
-        app:layout_constraintStart_toStartOf="@id/messageInputTV"
-        app:layout_constraintTop_toBottomOf="@id/messageInputTV"
+        app:layout_constraintStart_toStartOf="@id/messageInputTextView"
+        app:layout_constraintTop_toBottomOf="@id/messageInputTextView"
         tools:text="23:00 სამ."
 
         />
