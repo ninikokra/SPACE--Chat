@@ -12,7 +12,6 @@ class ChatUsersViewModel(private val chatRepository: ChatRepository) : ViewModel
     fun showMessages(): Flow<List<MessageModel>> = chatRepository.getMessages()
 
     private fun provideMessageModel(editTextInput: String, tag: String) = MessageModel(
-        id = null,
         sender = tag,
         message = editTextInput,
         timeStamp = getTimeInMills()

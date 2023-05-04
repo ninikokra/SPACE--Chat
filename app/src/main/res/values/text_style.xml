@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="mediumMyriadGeo_Normal">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
         <item name="android:textColor">?attr/color</item>
         <item name="android:font">@font/myriad_geo</item>
     </style>
@@ -9,6 +10,12 @@
     <style name="smallMyriadGeo_Normal">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/neutral_01_great_dark_grey</item>
+        <item name="android:font">@font/myriad_geo</item>
+    </style>
+
+    <style name="message_style" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/neutral_01_great_dark_grey</item>
+        <item name="android:textSize">@dimen/dimen_14sp</item>
         <item name="android:font">@font/myriad_geo</item>
     </style>
 

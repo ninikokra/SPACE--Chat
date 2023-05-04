@@ -8,14 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.space.space__chat.R
 import com.space.space__chat.databinding.RvUserItemBinding
 import com.space.space__chat.domain.model.MessageModel
-import com.space.space__chat.presentation.base.AdapterListener
 import com.space.space__chat.utils.ChatCallBack
 import com.space.space__chat.utils.extensions.convertTimeToString
 import com.space.space__chat.utils.extensions.setImgTint
 import com.space.space__chat.utils.extensions.setTint
 
-class ChatRVAdapter(private val listener: AdapterListener) :
-    ListAdapter<MessageModel, ChatRVAdapter.ChatRvViewHolder>(ChatCallBack()) {
+class ChatAdapter(private val adapterListener: ()->String) :
+    ListAdapter<MessageModel, ChatAdapter.ChatRvViewHolder>(ChatCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatRvViewHolder {
         return ChatRvViewHolder(
@@ -27,22 +26,22 @@ class ChatRVAdapter(private val listener: AdapterListener) :
         )
     }
     override fun onBindViewHolder(holder: ChatRvViewHolder, position: Int) {
-        holder.bind(listener, getItem(position))
+        holder.bind(adapterListener, getItem(position))
 
     }
     class ChatRvViewHolder(private val binding: RvUserItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(listener: AdapterListener, item: MessageModel) = with(binding) {
+        fun bind(adapterListener: () -> String, item: MessageModel) = with(binding) {
             messageInputTV.text = item.message
             timeStampTV.text = item.timeStamp!!.convertTimeToString()
             val color =
-                if (listener.getUserId() == item.sender) R.color.purple_light else R.color.neutral_05_lightest_grey
+                if (adapterListener.invoke() == item.sender) R.color.purple_light else R.color.neutral_05_lightest_grey
             chatDesignSmallBubbleIMG.setImgTint(color)
             chatDesignBigBubbleIMG.setImgTint(color)
             messageInputTV.setTint(color)
             root.layoutDirection =
-                if (listener.getUserId() == item.sender) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
+                if (adapterListener.invoke() == item.sender) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
         }
     }
 }

@@ -14,21 +14,17 @@ typealias Inflate<VB> = (LayoutInflater, ViewGroup, Boolean) -> VB
 
 abstract class BaseFragment<VB : ViewBinding, VM : ViewModel> : Fragment() {
 
-    abstract val viewModelClass: KClass<VM>
     private val viewModel: VM by viewModelForClass(clazz = viewModelClass)
+    abstract val viewModelClass: KClass<VM>
+
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
-    protected val listener = object : AdapterListener {
-        override val getUserId: () -> String
-            get() = { userId }
-    }
-    protected val userId get() = userId()
-    abstract fun userId(): String
+    private val userId get() = tag.toString()
+    protected val adapterListener = { userId }
 
     abstract fun inflate(): Inflate<VB>
-    abstract fun onBind(viewmodel: VM)
-
+    abstract fun onBind(viewModel: VM)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
