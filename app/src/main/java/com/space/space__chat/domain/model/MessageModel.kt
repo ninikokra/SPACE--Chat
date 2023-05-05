@@ -4,5 +4,6 @@ data class MessageModel(
     val id: Int? = null,
     val sender: String?,
     val message: String?,
-    val timeStamp: Long?
+    val timeStamp: Long?,
+    val isOnline:Boolean = true
 )

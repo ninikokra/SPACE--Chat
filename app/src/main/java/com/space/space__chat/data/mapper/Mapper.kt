@@ -8,10 +8,12 @@ fun MessageModel.toEntity() = MessageEntity(
     sender = sender,
     message = message,
     timeStamp = timeStamp,
+    isOnline = isOnline
 )
 fun MessageEntity.toModel() = MessageModel(
     id = id,
     sender = sender,
     message = message,
     timeStamp = timeStamp,
+    isOnline = isOnline
 )

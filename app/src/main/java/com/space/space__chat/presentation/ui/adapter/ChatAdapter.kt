@@ -11,9 +11,10 @@ import com.space.space__chat.domain.model.MessageModel
 import com.space.space__chat.utils.ChatCallBack
 import com.space.space__chat.utils.extensions.convertTimeToString
 import com.space.space__chat.utils.extensions.setImgTint
+import com.space.space__chat.utils.extensions.setTextViewColor
 import com.space.space__chat.utils.extensions.setTint
 
-class ChatAdapter(private val adapterListener: ()->String) :
+class ChatAdapter(private val adapterListener: () -> String) :
     ListAdapter<MessageModel, ChatAdapter.ChatRvViewHolder>(ChatCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatRvViewHolder {
@@ -34,14 +35,55 @@ class ChatAdapter(private val adapterListener: ()->String) :
 
         fun bind(adapterListener: () -> String, item: MessageModel) = with(binding) {
             messageInputTextView.text = item.message
-            timeStampTV.text = item.timeStamp!!.convertTimeToString()
             val color =
-                if (adapterListener.invoke() == item.sender) R.color.purple_light else R.color.neutral_05_lightest_grey
-            chatDesignSmallBubbleIMG.setImgTint(color)
-            chatDesignBigBubbleIMG.setImgTint(color)
-            messageInputTextView.setTint(color)
-            root.layoutDirection =
-                if (adapterListener.invoke() == item.sender) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
+                if (adapterListener.invoke() == item.sender) {
+                    if (item.isOnline) messageSentSuccessfully(
+                        binding,
+                        item
+                    ) else messageNotSentNoInternet(binding, item)
+                } else {
+                    messageReceiverUi(binding, item)
+                }
+        }
+        private fun messageSentSuccessfully(binding: RvUserItemBinding, item: MessageModel) {
+            with(binding) {
+                with(R.color.purple_light) {
+                    timeStampTV.text = item.timeStamp!!.convertTimeToString()
+                    timeStampTV.setTextViewColor(R.color.neutral_02_dark_grey)
+                    chatDesignBigBubbleIMG.setImgTint(this)
+                    chatDesignSmallBubbleIMG.setImgTint(this)
+                    messageInputTextView.setTint(this)
+                }
+                root.layoutDirection = View.LAYOUT_DIRECTION_RTL
+            }
+
+        }
+
+        private fun messageNotSentNoInternet(binding: RvUserItemBinding, item: MessageModel) {
+            with(binding) {
+                with(R.color.purple_light) {
+                    timeStampTV.text = timeStampTV.context.getString(R.string.error_message)
+                    timeStampTV.setTextViewColor(R.color.error_label)
+                    chatDesignBigBubbleIMG.setImgTint(this)
+                    chatDesignSmallBubbleIMG.setImgTint(this)
+                    messageInputTextView.setTint(this)
+                    messageInputTextView.setTextViewColor(R.color.error_text)
+                }
+                root.layoutDirection = View.LAYOUT_DIRECTION_RTL
+            }
+        }
+
+        private fun messageReceiverUi(binding: RvUserItemBinding, item: MessageModel) {
+            with(binding) {
+                with(R.color.neutral_05_lightest_grey) {
+                    timeStampTV.text = item.timeStamp!!.convertTimeToString()
+                    timeStampTV.setTextViewColor(R.color.neutral_02_dark_grey)
+                    chatDesignBigBubbleIMG.setImgTint(this)
+                    chatDesignSmallBubbleIMG.setImgTint(this)
+                    messageInputTextView.setTint(this)
+                }
+                root.layoutDirection = View.LAYOUT_DIRECTION_LTR
+            }
         }
     }
 }

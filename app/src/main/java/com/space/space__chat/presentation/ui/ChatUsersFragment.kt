@@ -1,10 +1,12 @@
 package com.space.space__chat.presentation.ui
 
 import com.space.space__chat.databinding.FragmentChatUsersBinding
+import com.space.space__chat.domain.model.MessageModel
 import com.space.space__chat.presentation.base.BaseFragment
 import com.space.space__chat.presentation.base.Inflate
 import com.space.space__chat.presentation.ui.adapter.ChatAdapter
 import com.space.space__chat.presentation.vm.ChatUsersViewModel
+import com.space.space__chat.utils.extensions.isNetworkAvailable
 import com.space.space__chat.utils.extensions.lifecycleScopeCollect
 import kotlin.reflect.KClass
 
@@ -17,7 +19,6 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
     private val adapter by lazy {
         ChatAdapter(adapterListener)
     }
-
     override fun inflate(): Inflate<FragmentChatUsersBinding> {
         return FragmentChatUsersBinding::inflate
     }
@@ -27,7 +28,6 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
             initRecyclerView(this)
             binding.chatSendBTN.setOnClickListener {
                 sendMessage(viewModel)
-
             }
         }
     }
@@ -38,17 +38,22 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
 
     }
 
+    private fun filterMessages(messages: List<MessageModel>): List<MessageModel> {
+        return messages.filter {
+            it.sender == adapterListener.invoke() || it.isOnline
+        }
+    }
+
     private fun sendMessage(viewModel: ChatUsersViewModel) {
-        with(binding.chatInputET){
-            viewModel.sendMessage(text.toString(), tag.toString())
-            text?.clear()
+        with(viewModel) {
+            sendMessage(binding.chatInputET.text.toString(), tag.toString(),requireContext().isNetworkAvailable())
+            binding.chatInputET.text?.clear()
         }
     }
 
     private fun showMessages(viewModel: ChatUsersViewModel) {
         lifecycleScopeCollect(viewModel.showMessages()) { messages ->
-            adapter.submitList(messages)
+            adapter.submitList(filterMessages(messages))
         }
     }
-
 }
