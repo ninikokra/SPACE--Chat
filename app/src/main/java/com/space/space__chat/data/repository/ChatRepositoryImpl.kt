@@ -1,10 +1,10 @@
 package com.space.space__chat.data.repository
 
-import com.space.space__chat.data.ChatDao
+import com.space.space__chat.data.dao.ChatDao
 import com.space.space__chat.data.mapper.toEntity
 import com.space.space__chat.data.mapper.toModel
-import com.space.space__chat.data.model.MessageModel
 import com.space.space__chat.domain.ChatRepository
+import com.space.space__chat.domain.model.MessageModel
 import kotlinx.coroutines.flow.map
 
 class ChatRepositoryImpl(private val dao: ChatDao) : ChatRepository {
@@ -13,7 +13,6 @@ class ChatRepositoryImpl(private val dao: ChatDao) : ChatRepository {
         chat.map {
             it.toModel()
         }
-
     }
 
     override suspend fun insertMessages(message: MessageModel) {

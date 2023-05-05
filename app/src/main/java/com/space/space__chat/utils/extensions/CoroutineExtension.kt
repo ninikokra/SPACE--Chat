@@ -1,18 +1,12 @@
 package com.space.space__chat.utils.extensions
 
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-
-fun LifecycleOwner.launchWithLifecycle(
-    block: suspend CoroutineScope.() -> Unit
-) {
-    lifecycleScope.launch { block() }
-}
 
 fun ViewModel.viewModelScope(
     block: suspend CoroutineScope.() -> Unit
@@ -20,8 +14,10 @@ fun ViewModel.viewModelScope(
     viewModelScope.launch { block() }
 }
 
-fun Fragment.lifecycleScope(block: suspend CoroutineScope.() -> Unit) {
+fun <FL> Fragment.lifecycleScopeCollect(flow: Flow<FL>, block: suspend CoroutineScope.(FL) -> Unit) {
     viewLifecycleOwner.lifecycleScope.launch {
-        block()
+        flow.collect { item ->
+            block(item)
+        }
     }
 }

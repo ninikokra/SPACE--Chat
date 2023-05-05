@@ -15,6 +15,7 @@
     <dimen name="dimen_3dp">3dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
     <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_6dp">6dp</dimen>
     <dimen name="dimen_10dp">10dp</dimen>
     <dimen name="dimen_14dp">14dp</dimen>
     <dimen name="dimen_16dp">16dp</dimen>
