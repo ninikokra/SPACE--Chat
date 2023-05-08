@@ -18,14 +18,17 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initFragments()
+        if (savedInstanceState == null) {
+            initFragments()
+        }
+
         initSwitchListener()
     }
 
     private fun initFragments() {
         supportFragmentManager.beginTransaction().apply {
-            replace(binding.topUserFragment!!.id, ChatUsersFragment(), UserType.TOP_USER.name)
-            replace(binding.bottomUserFragment!!.id, ChatUsersFragment(), UserType.BOTTOM_USER.name)
+            replace(binding.topUserFragment.id, ChatUsersFragment(), UserType.TOP_USER.name)
+            replace(binding.bottomUserFragment.id, ChatUsersFragment(), UserType.BOTTOM_USER.name)
         }.commit()
     }
 

@@ -35,10 +35,8 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
     private fun initRecyclerView(viewModel: ChatUsersViewModel) {
         binding.chatFragmentRV.adapter = adapter
         showMessages(viewModel)
-
     }
-
-    private fun filterMessages(messages: List<MessageModel>): List<MessageModel> {
+    private fun filterMessages(messages: List<MessageModel>) : List<MessageModel> {
         return messages.filter {
             it.sender == adapterListener.invoke() || it.isOnline
         }
@@ -50,7 +48,6 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
             binding.chatInputET.text?.clear()
         }
     }
-
     private fun showMessages(viewModel: ChatUsersViewModel) {
         lifecycleScopeCollect(viewModel.showMessages()) { messages ->
             adapter.submitList(filterMessages(messages))
