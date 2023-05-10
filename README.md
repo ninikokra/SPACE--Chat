@@ -1,6 +1,7 @@
 # Space--Chat
 <img src="https://user-images.githubusercontent.com/95241918/237201364-2590252f-d752-4961-8ab2-d320f349eb2e.png" width="80" height="80">
 # Purpose of the App
+
 This app is designed to showcase how to effectively handle various features of a standard chat application, all within a single screen. With a user-friendly interface and intuitive design, this app makes it easy for users to navigate and manage their conversations, even when dealing with complex data and interactions.
 
 # Features
