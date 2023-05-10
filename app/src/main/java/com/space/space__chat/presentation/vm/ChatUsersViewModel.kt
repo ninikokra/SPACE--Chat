@@ -11,6 +11,12 @@ class ChatUsersViewModel(private val chatRepository: ChatRepository) : ViewModel
 
     fun showMessages(): Flow<List<MessageModel>> = chatRepository.getMessages()
 
+     fun filterMessages(messages: List<MessageModel>, adapterListener:() ->String) : List<MessageModel> {
+        return messages.filter {
+            it.sender == adapterListener.invoke() || it.isOnline
+        }
+    }
+
     private fun provideMessageModel(editTextInput: String, tag: String, isOnline: Boolean) =
         MessageModel(
             sender = tag,

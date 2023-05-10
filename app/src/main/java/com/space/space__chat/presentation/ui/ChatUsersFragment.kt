@@ -1,7 +1,6 @@
 package com.space.space__chat.presentation.ui
 
 import com.space.space__chat.databinding.FragmentChatUsersBinding
-import com.space.space__chat.domain.model.MessageModel
 import com.space.space__chat.presentation.base.BaseFragment
 import com.space.space__chat.presentation.base.Inflate
 import com.space.space__chat.presentation.ui.adapter.ChatAdapter
@@ -36,11 +35,6 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
         binding.chatFragmentRV.adapter = adapter
         showMessages(viewModel)
     }
-    private fun filterMessages(messages: List<MessageModel>) : List<MessageModel> {
-        return messages.filter {
-            it.sender == adapterListener.invoke() || it.isOnline
-        }
-    }
 
     private fun sendMessage(viewModel: ChatUsersViewModel) {
         with(viewModel) {
@@ -50,7 +44,7 @@ class ChatUsersFragment : BaseFragment<FragmentChatUsersBinding, ChatUsersViewMo
     }
     private fun showMessages(viewModel: ChatUsersViewModel) {
         lifecycleScopeCollect(viewModel.showMessages()) { messages ->
-            adapter.submitList(filterMessages(messages))
+            adapter.submitList(viewModel.filterMessages(messages,adapterListener))
         }
     }
 }

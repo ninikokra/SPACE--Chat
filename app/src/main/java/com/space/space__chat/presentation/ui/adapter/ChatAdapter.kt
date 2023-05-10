@@ -32,9 +32,7 @@ class ChatAdapter(private val adapterListener: () -> String) :
                 if (adapterListener.invoke() == item.sender) {
                     if (item.isOnline) {
                         setSentUI(item)
-                    } else {
-                        setErrorUI(item)
-                    }
+                    } else setErrorUI(item)
                 } else {
                     setReceivedUI(item)
                 }

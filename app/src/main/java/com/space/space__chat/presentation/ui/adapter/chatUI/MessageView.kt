@@ -22,7 +22,7 @@ class MessageView @JvmOverloads constructor(
     defStyleRes: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr, defStyleRes) {
 
-    private var binding: MessageCustomviewBinding =
+    private val binding: MessageCustomviewBinding =
         MessageCustomviewBinding.inflate(LayoutInflater.from(context), this, true)
 
     fun setErrorUI(item: MessageModel) {
@@ -41,6 +41,7 @@ class MessageView @JvmOverloads constructor(
             timeStampTV.text = item.timeStamp!!.convertTimeToString()
             timeStampTV.setTextViewColor(R.color.neutral_02_dark_grey)
             messageInputTextView.text = item.message
+            messageInputTextView.setTextViewColor(R.color.black)
             setChatDesignColors(R.color.neutral_05_lightest_grey)
             root.layoutDirection = View.LAYOUT_DIRECTION_LTR
         }
@@ -51,6 +52,7 @@ class MessageView @JvmOverloads constructor(
             timeStampTV.text = item.timeStamp!!.convertTimeToString()
             timeStampTV.setTextViewColor(R.color.neutral_02_dark_grey)
             messageInputTextView.text = item.message
+            messageInputTextView.setTextViewColor(R.color.black)
             setChatDesignColors(R.color.purple_light)
             root.layoutDirection = View.LAYOUT_DIRECTION_RTL
         }
