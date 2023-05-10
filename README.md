@@ -23,9 +23,12 @@ On the home screen user can see:
 - send and receive messages
 - change theme mode from light to dark and vice versa
 
+Horizontal:
 
 <img src="https://github.com/ninikokra/SPACE--Chat/assets/65869500/c9777fed-e364-449c-9c3f-fe3bfc95ad88" width="200">
 <img src="https://github.com/ninikokra/SPACE--Chat/assets/65869500/65c0bfdd-e0bb-470d-b2ce-7971dac8e92d" width=200">
+                                                                                                                   
+ Vertical:     
                                                                                                                    
 <img src="https://github.com/ninikokra/SPACE--Chat/assets/65869500/7c281253-f4cd-4bdb-8322-8655d440e3c4" width="400">
 <img src="https://github.com/ninikokra/SPACE--Chat/assets/65869500/d0a72b2f-d459-4bee-8ce1-73711f359859" width="400">
