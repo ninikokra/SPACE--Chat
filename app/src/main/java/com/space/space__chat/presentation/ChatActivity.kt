@@ -6,29 +6,28 @@ import androidx.appcompat.app.AppCompatDelegate
 import com.space.space__chat.R
 import com.space.space__chat.databinding.ActivityChatBinding
 import com.space.space__chat.presentation.model.ThemeMode
-import com.space.space__chat.presentation.model.UserType
-import com.space.space__chat.presentation.ui.ChatUsersFragment
+import com.space.space__chat.presentation.ui.ChatUsersFragmentFirst
+import com.space.space__chat.presentation.ui.ChatUsersFragmentSecond
+import com.space.space__chat.utils.extensions.viewBinding
 
 class ChatActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityChatBinding
+    private val binding by viewBinding(ActivityChatBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
             initFragments()
         }
-
         initSwitchListener()
     }
 
     private fun initFragments() {
         supportFragmentManager.beginTransaction().apply {
-            replace(binding.topUserFragment.id, ChatUsersFragment(), UserType.TOP_USER.name)
-            replace(binding.bottomUserFragment.id, ChatUsersFragment(), UserType.BOTTOM_USER.name)
+            replace(binding.topUserFragment.id, ChatUsersFragmentFirst())
+            replace(binding.bottomUserFragment.id, ChatUsersFragmentSecond())
         }.commit()
     }
 
