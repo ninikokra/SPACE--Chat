@@ -13,5 +13,6 @@
     <color name="divider_primary">#F7CE7F</color>
     <color name="black">#000000</color>
     <color name="error_label">#FF0000</color>
+    <color name="error_text">#80191919</color>
     <color name="yellow">#FFCA55</color>
 </resources>
