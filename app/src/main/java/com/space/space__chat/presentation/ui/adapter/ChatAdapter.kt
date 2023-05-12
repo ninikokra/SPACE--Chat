@@ -1,35 +1,30 @@
 package com.space.space__chat.presentation.ui.adapter
 
-import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.space.space__chat.databinding.RvUserItemBinding
 import com.space.space__chat.domain.model.MessageModel
 import com.space.space__chat.utils.ChatCallBack
+import com.space.space__chat.utils.extensions.viewBinding
 
-class ChatAdapter(private val adapterListener: () -> String) :
+class ChatAdapter(private val listener: AdapterListener) :
     ListAdapter<MessageModel, ChatAdapter.ChatRvViewHolder>(ChatCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatRvViewHolder {
-        return ChatRvViewHolder(
-            RvUserItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
+        return ChatRvViewHolder(parent.viewBinding(RvUserItemBinding::inflate)
             )
-        )
-    }
 
+    }
     override fun onBindViewHolder(holder: ChatRvViewHolder, position: Int) {
-        holder.bind(adapterListener, getItem(position))
+        holder.bind(listener, getItem(position))
     }
 
     class ChatRvViewHolder(private val binding: RvUserItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(adapterListener: () -> String, item: MessageModel) = with(binding) {
+        fun bind(listener: AdapterListener, item: MessageModel) = with(binding) {
             messageCustomView.apply {
-                if (adapterListener.invoke() == item.sender) {
+                if (listener.getUserId() == item.sender) {
                     if (item.isOnline) {
                         setSentUI(item)
                     } else setErrorUI(item)

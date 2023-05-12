@@ -11,22 +11,23 @@ class ChatUsersViewModel(private val chatRepository: ChatRepository) : ViewModel
 
     fun showMessages(): Flow<List<MessageModel>> = chatRepository.getMessages()
 
-     fun filterMessages(messages: List<MessageModel>, adapterListener:() ->String) : List<MessageModel> {
+    fun filterMessages(messages: List<MessageModel>, listener: String): List<MessageModel> {
         return messages.filter {
-            it.sender == adapterListener.invoke() || it.isOnline
+            it.sender == listener || it.isOnline
         }
     }
 
-    private fun provideMessageModel(editTextInput: String, tag: String, isOnline: Boolean) =
+    private fun provideMessageModel(editTextInput: String, userId: String, isOnline: Boolean) =
         MessageModel(
-            sender = tag,
+            sender = userId,
             message = editTextInput,
             timeStamp = getTimeInMills(),
             isOnline = isOnline
         )
-    fun sendMessage(messageInput: String, tag: String, isOnline: Boolean) {
+
+    fun sendMessage(messageInput: String, userId: String, isOnline: Boolean) {
         viewModelScope {
-            chatRepository.insertMessages(provideMessageModel(messageInput, tag, isOnline))
+            chatRepository.insertMessages(provideMessageModel(messageInput, userId, isOnline))
         }
     }
 }
