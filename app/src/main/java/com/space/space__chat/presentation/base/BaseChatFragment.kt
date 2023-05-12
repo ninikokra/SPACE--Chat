@@ -10,6 +10,11 @@ import com.space.space__chat.utils.extensions.lifecycleScopeCollect
 import com.space.space__chat.utils.extensions.viewBinding
 import kotlin.reflect.KClass
 
+/**
+ * this is base class for chat-related fragments.
+ * It contains methods for setting up the UI elements of the chat screen
+ */
+
 open class BaseChatFragment : BaseFragment<ChatUsersViewModel>() {
 
     private val binding by viewBinding(FragmentChatUsersBinding::bind)

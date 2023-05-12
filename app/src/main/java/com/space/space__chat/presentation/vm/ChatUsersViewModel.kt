@@ -7,6 +7,11 @@ import com.space.space__chat.utils.extensions.getTimeInMills
 import com.space.space__chat.utils.extensions.viewModelScope
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * The ChatUsersViewModel class is a ViewModel class that interacts with the ChatRepository to
+ * handle chat message data and provide necessary functionality to the ChatUsersFragment.
+ */
+
 class ChatUsersViewModel(private val chatRepository: ChatRepository) : ViewModel() {
 
     fun showMessages(): Flow<List<MessageModel>> = chatRepository.getMessages()

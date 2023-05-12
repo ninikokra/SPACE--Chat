@@ -4,6 +4,9 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+/**
+ * Extension function for checking network availability
+ */
 
 fun Context.isNetworkAvailable(): Boolean {
 
