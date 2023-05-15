@@ -15,7 +15,7 @@ import com.space.space__chat.utils.extensions.setTextViewColor
 import com.space.space__chat.utils.extensions.setTint
 
 /**
- * this is message custom view class, used to display a message in the chat UI.
+ * [MessageView] is a message custom view class, used to display a message in the chat UI.
  * it provides functions to set different UI styles
  */
 class MessageView @JvmOverloads constructor(
