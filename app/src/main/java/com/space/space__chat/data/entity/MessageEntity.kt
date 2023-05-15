@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
- * This class is a data class that represents a message entity in the database.
+ * [MessageEntity] is a data class that represents a message entity in the database.
  */
 @Entity(tableName = "messages")
 data class MessageEntity(

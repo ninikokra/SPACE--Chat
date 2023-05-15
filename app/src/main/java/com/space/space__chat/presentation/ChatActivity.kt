@@ -11,7 +11,7 @@ import com.space.space__chat.presentation.ui.ChatUsersFragmentSecond
 import com.space.space__chat.utils.extensions.viewBinding
 
 /**
- * The ChatActivity is an activity class that represents the main screen of the chat feature.
+ * [ChatActivity] is an activity class that represents the main screen of the chat feature.
  */
 
 class ChatActivity : AppCompatActivity() {

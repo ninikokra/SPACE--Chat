@@ -6,7 +6,7 @@ import com.space.space__chat.data.dao.ChatDao
 import com.space.space__chat.data.entity.MessageEntity
 
 /**
- * This class is an abstract class that represents the database for the chat application.
+ * [ChatDataBase] is an abstract class that represents the database for the chat application.
  * It extends the RoomDatabase class, which is an Android library for database management.
  * It contains an abstract method that returns a ChatDao object, which is used to interact with the database.
  */

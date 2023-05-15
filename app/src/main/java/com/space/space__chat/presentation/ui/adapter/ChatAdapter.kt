@@ -9,7 +9,7 @@ import com.space.space__chat.utils.ChatCallBack
 import com.space.space__chat.utils.extensions.viewBinding
 
 /**
- * The ChatAdapter class is a custom implementation of a RecyclerView.
+ * [ChatAdapter] class is a custom implementation of a RecyclerView.
  * Adapter that is used to display chat messages in a RecyclerView
  */
 class ChatAdapter(private val listener: AdapterListener) :

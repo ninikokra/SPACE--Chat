@@ -11,7 +11,7 @@ import com.space.space__chat.utils.extensions.viewBinding
 import kotlin.reflect.KClass
 
 /**
- * this is base class for chat-related fragments.
+ * [BaseChatFragment] base class for chat-related fragments.
  * It contains methods for setting up the UI elements of the chat screen
  */
 

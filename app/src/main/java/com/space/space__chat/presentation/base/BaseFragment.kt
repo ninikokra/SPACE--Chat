@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModelForClass
 import kotlin.reflect.KClass
 
 /**
- * This is an abstract class and provides a base implementation for creating fragments with a ViewModel.
+ * [BaseFragment] is an abstract class and provides a base implementation for creating fragments with a ViewModel.
  * It contains a few lifecycle methods that can be overridden in the child classes,
  * and a few abstract properties and methods that need to be implemented in the child classes.
  */

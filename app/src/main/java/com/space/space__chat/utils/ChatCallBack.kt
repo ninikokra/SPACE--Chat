@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 
 /**
- * This class is used by the ListAdapter to calculate the difference between two lists of items
+ * [ChatCallBack] is used by the ListAdapter to calculate the difference between two lists of items
  * and update the RecyclerView accordingly,
  * by calling the appropriate notifyItem*() methods.
  */

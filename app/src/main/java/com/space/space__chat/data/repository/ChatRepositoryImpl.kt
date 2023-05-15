@@ -8,7 +8,7 @@ import com.space.space__chat.domain.model.MessageModel
 import kotlinx.coroutines.flow.map
 
 /**
- * ChatRepositoryImpl is a class that implements the ChatRepository interface,
+ * [ChatRepositoryImpl] is a class that implements the ChatRepository interface,
  * which defines the methods for interacting with the chat data source.
  */
 

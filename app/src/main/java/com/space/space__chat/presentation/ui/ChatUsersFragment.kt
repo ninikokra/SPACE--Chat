@@ -4,7 +4,7 @@ import com.space.space__chat.presentation.base.BaseChatFragment
 
 /**
  *
- * These are two concrete implementations of the BaseChatFragment class.
+ * [ChatUsersFragmentFirst][ChatUsersFragmentSecond] are two concrete implementations of the BaseChatFragment class.
  * They override the userId() function to provide a specific user ID for each fragment.
  */
 class ChatUsersFragmentFirst : BaseChatFragment() {

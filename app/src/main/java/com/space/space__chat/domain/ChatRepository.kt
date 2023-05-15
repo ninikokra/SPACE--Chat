@@ -4,7 +4,7 @@ import com.space.space__chat.domain.model.MessageModel
 import kotlinx.coroutines.flow.Flow
 
 /**
- * This interface represents a repository for handling the data of the chat application.
+ * [ChatRepository] is an interface, represents a repository for handling the data of the chat application.
  * It defines methods for getting and inserting messages.
  */
 
