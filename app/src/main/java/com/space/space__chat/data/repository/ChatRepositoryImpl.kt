@@ -7,6 +7,11 @@ import com.space.space__chat.domain.ChatRepository
 import com.space.space__chat.domain.model.MessageModel
 import kotlinx.coroutines.flow.map
 
+/**
+ * [ChatRepositoryImpl] is a class that implements the ChatRepository interface,
+ * which defines the methods for interacting with the chat data source.
+ */
+
 class ChatRepositoryImpl(private val dao: ChatDao) : ChatRepository {
 
     override fun getMessages() = dao.getAllMessages().map { chat ->
